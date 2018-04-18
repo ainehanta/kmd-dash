@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.3.1.slim.min.js"></script>
+    <script src="popup.js"></script>
+    <link href="picnic.min.css" rel="stylesheet">
+
+    <style>
+      .container {
+        padding-top: 1rem;
+        width: 350px;
+      }
+
+      .text-center {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+      }
+
+      .button, .button:hover, .button:active, .button:focus {
+        width: 200px;
+        border: 1px solid grey;
+        box-sizing: border-box;
+      }
+
+      .button:focus {
+        outline: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex one center container">
+      <div class="text-center"><img src="logo.png" style="width: 100px; height: 100px;" /></div>
+      <div class="text-center">KEIO MEDIA DESIGN</div>
+      <div class="text-center"><a class="button pseudo" id="open_internal">Open Internal Site</a></div>
+      <div class="text-center"><a class="button pseudo" id="open_elerning">Open e-Learning</a></div>
+    </div>
+  </body>
+</html>
