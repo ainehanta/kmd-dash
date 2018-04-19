@@ -22,17 +22,14 @@ $(function() {
   });
 
   $("#open_elerning").on("click", function() {
-    chrome.tabs.create({"url": "http://archiver.kmd.keio.ac.jp/cgi/e-student/login.cgi"}, function(tab) {
-      let message = {
-        page: "elearning",
-        account: localStorage["elearning-account"],
-        birth_y: localStorage["elearning-birth_y"],
-        birth_m: localStorage["elearning-birth_m"],
-        birth_d: localStorage["elearning-birth_d"],
-        pass: localStorage["elearning-password"]
-      };
+    let message = {
+      account: localStorage["elearning-account"],
+      birth_y: localStorage["elearning-birth_y"],
+      birth_m: localStorage["elearning-birth_m"],
+      birth_d: localStorage["elearning-birth_d"],
+      pass: localStorage["elearning-password"]
+    };
 
-      chrome.runtime.sendMessage({action: "login", tabId: tab.id, message: message});
-    });
+    chrome.tabs.create({"url": `http://archiver.kmd.keio.ac.jp/cgi/e-student/e_class_list.cgi?account=${message.account}&birth_y=${message.birth_y}&birth_m=${message.birth_m}&birth_d=${message.birth_d}&pass=${message.pass}`})
   });
 });
