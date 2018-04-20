@@ -9,7 +9,6 @@ chrome.runtime.onMessage.addListener(
 function sendMessage (tabId, message, maxRetry, retryCount = 0) {
   setTimeout(function() {
     chrome.tabs.sendMessage(tabId, message, function(response) {
-      console.log(response)
       if (typeof response == "undefined" && retryCount < maxRetry) {
         sendMessage(tabId, message, maxRetry, retryCount+1);
       }
